@@ -1,4 +1,3 @@
 .vscode
 go-RssAggregator.exe
 .env
-vendor
