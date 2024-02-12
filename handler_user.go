@@ -24,6 +24,11 @@ func (apiCfg *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
+	if params.Name == "" {
+		respondWithError(w, 400, "Invalid request: Name field cannot be empty")
+		return
+	}
+
 	user, err := apiCfg.DB.CreateUser(r.Context(), database.CreateUserParams{
 		ID:        uuid.New(),
 		CreatedAt: time.Now().UTC(),
