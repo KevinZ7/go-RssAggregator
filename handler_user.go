@@ -52,4 +52,11 @@ func (apiCfg *apiConfig) handleGetUser(w http.ResponseWriter, r *http.Request) {
 		respondWithError(w, 403, fmt.Sprintf("Auth error: %v", err))
 		return
 	}
+
+	user, err := apiCfg.DB.GetUserByAPIKey(r.Context(), apiKey)
+	if err != nil {
+		respondWithError(w, 403, fmt.Sprintf("Auth error: %v", err))
+	}
+
+	respondWithJSON(w, 200, databaseUserToUser(user))
 }
