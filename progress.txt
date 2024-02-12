@@ -1,0 +1,5 @@
+---- 02-11-2024
+
+Finished creating user handler and working correctly
+
+next step: add user api authentication
