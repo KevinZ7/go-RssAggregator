@@ -8,4 +8,4 @@ next step: add user api authentication
 
 ---- 02-13-2024
 
-next step: many to many relationships..
+next step: Let users get list of new posts to the feeds that they are subscribed to
